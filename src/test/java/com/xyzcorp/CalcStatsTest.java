@@ -176,7 +176,7 @@ public class CalcStatsTest {
 	public void testOnlySupportUpTo1Million() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("Array size should be less that 1000000");
-		CalcStats calcStats = new CalcStats(new int[1000001]);
+		new CalcStats(new int[1000001]);
 	}
 	
 	@Test
@@ -188,28 +188,4 @@ public class CalcStatsTest {
 		CalcStats calcStats = new CalcStats(bigArray);
 		assertThat(calcStats.getAverage()).isEqualTo(Integer.MAX_VALUE * Integer.MAX_VALUE);
 	}
-
-	@Test
-    public void testStreamsOfStrings() {
-        IntStream intStream = IntStream.rangeClosed(1, 100);
-        Stream<Integer> boxed = intStream.boxed();
-        Stream<String> stringStream = boxed.map(x -> x + "");
-
-
-
-    }
-
-
-    @Test
-    public void testForEach() {
-        List<Integer> list = Arrays.asList(1,2,3,4);
-        for (Integer i : list) {
-
-        }
-    }
-
-    @Test
-    public void testForEachStream() {
-        List<Integer> list = Arrays.asList(1,2,3,4);
-    }
 }

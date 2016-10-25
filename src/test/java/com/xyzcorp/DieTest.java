@@ -21,7 +21,8 @@ public class DieTest {
     @Test
     public void testSimpleRollOf4() {
         //Stub!
-        Random random = new Random() {
+        @SuppressWarnings("serial")
+		Random random = new Random() {
             public int nextInt(int bound) {
               return 3;
             }

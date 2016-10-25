@@ -36,7 +36,8 @@ public class DieTest {
     @Test
     public void testSimpleRollOf2() {
         //Stub!
-        Random random = new Random() {
+        @SuppressWarnings("serial")
+		Random random = new Random() {
             public int nextInt(int bound) {
                 return 1;
             }

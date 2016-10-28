@@ -7,11 +7,13 @@ import static org.junit.Assert.assertEquals;
 import org.assertj.core.data.Offset;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.rules.ExpectedException;
 
 public class CalcStatsTest {
 
 	@Test
+	@Category(value=UnitTest.class)
 	public void testMinimumNoItemInAnArray() {
 		// Create a new instance with the array
 		CalcStats calcStats = new CalcStats(new int[] {});
